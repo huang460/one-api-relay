@@ -1,0 +1,12 @@
+# Binaries
+one-api.exe
+ngrok.exe
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Screenshots (keep only the clean ones)
+ss_login.png
+ss_login2.png
+ss_01_login.png
