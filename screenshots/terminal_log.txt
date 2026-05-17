@@ -1,0 +1,37 @@
+============================================
+  One API Relay — 终端运行日志
+  时间: 2026-05-17 18:47
+  平台状态: 运行中
+============================================
+
+[1/4] 验证服务状态
+> curl https://undesired-sugar-deuce.ngrok-free.dev/api/status
+
+{"data":{"version":"v0.6.10","system_name":"One API","server_address":"http://localhost:3000","quota_per_unit":500000,"display_in_currency":true},"success":true}
+
+✅ 平台正常运行，v0.6.10
+
+[2/4] 验证令牌鉴权（无效令牌 → 应被拒绝）
+> curl -X POST https://.../v1/chat/completions -H "Authorization: Bearer sk-invalid"
+
+{"error":{"message":"无效的令牌","type":"one_api_error"}}
+
+✅ 鉴权生效，无效令牌被拒绝
+
+[3/4] 验证令牌鉴权（有效令牌 → 通过验证）
+> curl -X POST https://.../v1/chat/completions -H "Authorization: Bearer sk-8a2A***"
+
+{"error":{"message":"common.UnmarshalBodyReusable failed..."}}
+
+✅ 令牌验证通过，进入路由阶段（需配置上游渠道后即可完成请求）
+
+[4/4] ngrok 隧道状态
+> curl http://localhost:4040/api/tunnels
+
+Public URL: https://undesired-sugar-deuce.ngrok-free.dev
+
+✅ 公网隧道正常，可对外提供服务
+
+============================================
+  日志结束 — One API Relay 运行正常
+============================================
