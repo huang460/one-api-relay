@@ -1,6 +1,14 @@
 # Binaries
 one-api.exe
 ngrok.exe
+new-api.exe
+cloudflared.exe
+
+# Database
+*.db
+
+# Logs
+logs/
 
 # OS
 .DS_Store
