@@ -1,4 +1,4 @@
-# AI API Relay — One API 中转站
+ai做的小玩意
 
 基于 [One API](https://github.com/songquanpeng/one-api) 搭建的多厂商 AI API 统一管理 & 转发平台，支持内网穿透公网访问。
 
